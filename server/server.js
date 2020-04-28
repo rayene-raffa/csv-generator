@@ -6,13 +6,15 @@ var app = express();
 
 
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '../client')));
 
 app.get('/', (req, res) => {
 });
 
 app.post('/generate', (req, res) => {
-    res.send('well received');
+    console.log(JSON.parse(req.body.jsonData));
+    res.end('well received');
 });
 
 

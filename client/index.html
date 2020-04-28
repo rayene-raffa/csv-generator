@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>CSV Generator</title>
+  <title>CSV Generator</title>
 </head>
 <body>
-    <form action="/generate" method="post">
-        <label for="jsonData">JSON Data :</label><br>
-        <input type="textarea" id="jsonData" name="jsonData"><br>
-        <input type="submit" value="Generate CSV">
-    </form>
+  <form action="/generate" method="post" id="jsonForm">
+    <label for="jsonData">JSON Data :</label><br>
+    <textarea  rows="40" cols="30" id="jsonData" name="jsonData"></textarea><br>
+    <input type="submit" value="Generate CSV">
+  </form>
 </body>
 </html>
