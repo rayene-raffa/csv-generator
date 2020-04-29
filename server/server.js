@@ -1,7 +1,7 @@
 var path = require('path');
 var express = require('express');
 var bodyParser = require('body-parser');
-
+var util = require('../lib/utils');
 var app = express();
 
 
@@ -13,8 +13,10 @@ app.get('/', (req, res) => {
 });
 
 app.post('/generate', (req, res) => {
-    console.log(JSON.parse(req.body.jsonData));
-    res.end('well received');
+    let csvData = util.generateReport(JSON.parse(req.body.jsonData));
+    // check server log to see output in proper formatting
+    // TODO : send data back as an actual file
+    res.send(csvData);
 });
 
 
